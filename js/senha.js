@@ -64,32 +64,17 @@ function md5(e) {
     return (p(a) + p(b) + p(c) + p(d)).toLowerCase()
 };
 
-function isNumeric(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-  }
-
 document.getElementById('btn-copy').addEventListener('click', () => {
     let senha_gerada = document.getElementById("senha_gerada").value;
     navigator.clipboard.writeText(senha_gerada);
 });
 
 document.getElementById('gerar_senha').addEventListener('click', () => {
-    document.getElementById('senha_gerada').value = ''
-    key_senha_1 = document.getElementById('key_senha_1').value
-    key_senha_2 = document.getElementById('key_senha_2').value
-
-    key = key_senha_1.toLowerCase().trim() + key_senha_2.toLowerCase().trim()
-
-    console.log(key)
-    senha_gerada = md5(key)
-
-    last_char = senha_gerada.slice(-1)
-
-    if (isNumeric(last_char)) {
-        senha_gerada += 'E' 
-    }
-
-    senha_gerada += '*'
-
-    document.getElementById('senha_gerada').value = senha_gerada
-})
+    document.getElementById('senha_gerada').value = '';
+    key_senha_1 = document.getElementById('key_senha_1').value;
+    key_senha_2 = document.getElementById('key_senha_2').value;
+    key_senha_3 = document.getElementById('key_senha_2').value;
+    key = key_senha_1.toLowerCase().trim() + key_senha_2.toLowerCase().trim() + key_senha_3.toLowerCase().trim();
+    senha_gerada = md5(key) + 'E*';
+    document.getElementById('senha_gerada').value = senha_gerada;
+});
