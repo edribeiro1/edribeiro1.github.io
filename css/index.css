@@ -36,6 +36,7 @@ button {
     /* background-color: #3f3f3f; */
     align-items: center;
     width: 100%;
+    margin-top: 5em;
 }
 
 .feed-2 {
@@ -81,7 +82,7 @@ iframe {
     padding: 20px;
     width: 40%;
     text-align: center;
-    font-size: 3em;
+    font-size: 1em;
     text-decoration: unset;
     color: white;
 }
